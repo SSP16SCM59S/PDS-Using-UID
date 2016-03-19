@@ -1,0 +1,95 @@
+Enter password: ******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 5
+Server version: 6.0.0-alpha-community-nt-debug MySQL Community Server (GPL)
+
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+
+mysql> use pds;
+Database changed
+
+
+mysql> show tables;
++-----------------+
+| Tables_in_pds   |
++-----------------+
+| customerdetails |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> create table dealerdetails(id int primary key,name varchar(50) not null, location varchar(500) not null,co
+ntact_Num varchar(15) not null, state varchar(30) not null, district varchar(30) not null, username varchar(30) n
+ot null,password varchar(20) not null);
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc dealerdetails;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| id          | int(11)      | NO   | PRI |         |       |
+| name        | varchar(50)  | NO   |     |         |       |
+| location    | varchar(500) | NO   |     |         |       |
+| contact_Num | varchar(15)  | NO   |     |         |       |
+| state       | varchar(30)  | NO   |     |         |       |
+| district    | varchar(30)  | NO   |     |         |       |
+| username    | varchar(30)  | NO   |     |         |       |
+| password    | varchar(20)  | NO   |     |         |       |
++-------------+--------------+------+-----+---------+-------+
+8 rows in set (0.02 sec)
+
+mysql> select * from dealerdetails;
++----+----------+----------------+-------------+-----------+------------+----------+----------+
+| id | name     | location       | contact_Num | state     | district   | username | password |
++----+----------+----------------+-------------+-----------+------------+----------+----------+
+|  1 | Benjamin | #123, xyz, abc | Karnataka   | Bangalore | 9986554498 | ben      | ben      |
++----+----------+----------------+-------------+-----------+------------+----------+----------+
+1 row in set (0.00 sec)
+
+mysql> delete from dealerdetails where id=1;
+Query OK, 1 row affected (0.03 sec)
+
+
+mysql> select * from dealerdetails;
++----+------+----------+-------------+-----------+-----------+----------+----------+
+| id | name | location | contact_Num | state     | district  | username | password |
++----+------+----------+-------------+-----------+-----------+----------+----------+
+|  1 | ash  | adsdasf  | 89045674321 | Karnataka | bangalore | ashwini  | ashwini  |
++----+------+----------+-------------+-----------+-----------+----------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from customerdetails;
++---------+------+
+| id      | name |
++---------+------+
+|      12 | ashu |
+|    1232 |      |
+| 1234521 | xyz  |
++---------+------+
+3 rows in set (0.08 sec)
+
+mysql> create table deal_custDetails(cid int(50)primary key, cname varchar(50) not null,cimage blob, rice_amt int
+(100) not null,rice_qty int(20) not null,ragi_amt int(20) not null,ragi_qty int(20) not null,wheat_amt int(20)not
+ null, wheat_qty int(20) not null,sugar_qty int(20) not null,sugar_amt int(20),dal_amt int(20) not null,dal_qty i
+nt(20) not null,total int(30));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc deal_custDetails;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| cid       | int(50)     | NO   | PRI |         |       |
+| cname     | varchar(50) | NO   |     |         |       |
+| cimage    | blob        | YES  |     | NULL    |       |
+| rice_amt  | int(100)    | NO   |     |         |       |
+| rice_qty  | int(20)     | NO   |     |         |       |
+| ragi_amt  | int(20)     | NO   |     |         |       |
+| ragi_qty  | int(20)     | NO   |     |         |       |
+| wheat_amt | int(20)     | NO   |     |         |       |
+| wheat_qty | int(20)     | NO   |     |         |       |
+| sugar_qty | int(20)     | NO   |     |         |       |
+| sugar_amt | int(20)     | YES  |     | NULL    |       |
+| dal_amt   | int(20)     | NO   |     |         |       |
+| dal_qty   | int(20)     | NO   |     |         |       |
+| total     | int(30)     | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+14 rows in set (0.02 sec)

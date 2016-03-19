@@ -1,0 +1,5 @@
+1. open cmd set path to java/jdk/bin.
+2. set classpath=C:\Users\Shash\Desktop\final pro\pdsFinal\src\pds\comm-2.0.jar;
+C:\Users\Shash\Desktop\final pro\pdsFinal\src\pds\comm-win32_all-2.0.1;
+C:\Users\Shash\Desktop\final pro\pdsFinal\src\pds\mysql-connector-java-3.0.11-stable-bin.jar;
+3. java SimpleRead.java
